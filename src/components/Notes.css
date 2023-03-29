@@ -1,0 +1,106 @@
+.noteContainer{
+    display: flex;
+    /* border: 2px solid green; */
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal{
+    display: none;
+}
+.mymodal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid blue; */
+    background-color: rgba(0, 0, 0, 0.599);
+    z-index: 99;
+}
+.myconfirmation{
+    display: flex;
+    position: fixed;
+    width: 50%;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    background-color: white;
+    opacity: 1;
+    transition: all .5s;
+    border: 5px solid #c294d4;
+    border-radius: 10px;
+}
+.myconfirmation form{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.myconfirmation form input{
+    background-image: linear-gradient(black 1px, transparent 1px);
+    background-size: 100% 25px;
+}
+.myconfirmation form textarea{
+    background-image: linear-gradient(black 1px, transparent 1px);
+    background-size: 100% 25px;
+    resize: none;
+    
+}
+#yesnobtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 5px;
+    width: 50%;
+    /* border: 2px solid red; */
+}
+#yesbtn:hover{
+    color: white;
+    background-color: #2ee468;
+    box-shadow: 2px 2px 2px black;
+}
+#nobtn:hover{
+    color: white;
+    background-color: #ea1818;
+    box-shadow: 2px 2px 2px black;
+}
+.notesArea{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px;
+    align-items: center;
+    width: 90%;
+    /* border: 2px solid red; */
+}
+.noteitemslist{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    /* border: 2px solid green; */
+    width: 100%;
+}
+@keyframes scaling {
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(100%);
+    }
+}
+@keyframes scalingOut {
+    from{
+        transform: scaleY(100%);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}

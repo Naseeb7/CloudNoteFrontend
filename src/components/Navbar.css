@@ -1,0 +1,91 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+
+.navbarContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* position: fixed;
+    top: 0; */
+    background-color: #461742;
+    width: 100%;
+    /* margin: 5px; */
+    /* border: 2px solid red; */
+    z-index: 11;
+}
+.navleft{
+    display: flex;
+    flex-direction: row;
+}
+.title{
+    font-size: 2rem;
+    color: rgb(255, 254, 254);
+    /* margin: 5px; */
+    padding: 5px;
+    padding-left: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.links{
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    color: #c294d4;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+}
+.links:hover{
+    color: white;
+    scale: 0.95;
+}
+.btnContainer{
+    display: flex;
+    margin: 5px;
+    width: 8%;
+    justify-content: center;
+    /* border: 2px solid yellow; */
+}
+.logout{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.logout i{
+    margin-right: 10px;
+    color: white;
+    scale: 1.2;
+}
+.logout i:hover{
+    scale: 1.1;
+}
+.logout button{
+    margin-left: 5px;
+    display: flex;
+    background-color: white;
+    color: rgb(66, 51, 75);
+}
+.logout button:hover{
+    box-shadow: white 1px 1px 2px 1px;
+    scale: 0.95;
+}
+.login{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+

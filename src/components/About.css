@@ -1,0 +1,43 @@
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* width: 70%; */
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+.aboutHead{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    display: flex;
+    border-left: 2px solid #76236f;
+    border-right: 2px solid #76236f;
+    box-shadow: 2px 3px 5px 5px gray;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+.aboutHeader{
+    display: flex;
+    border-radius: 10px;
+    color: #4f104ac3;
+}
+.aboutText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.back{
+    display: flex;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    color: black;
+}

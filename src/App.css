@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap');
+
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headertext{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Righteous', cursive;
+    /* color: #c294d4; */
+}
+.titletext{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Domine', serif;
+    font-weight: bold;
+    /* color: #c294d4; */
+}
+.paratext{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto Mono', monospace;
+}
+.inputtext{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Space Grotesk', sans-serif;
+    /* text-align: center; */
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.commenttext{
+    display: flex;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: x-small;
+    color: rgb(254, 40, 40);
+}
+.tagtext{
+    display: flex;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.btn{
+    display: flex;
+    padding: 4px;
+    color: #401c4e;
+    justify-content: center;
+    align-items: center;
+    background-color: #c294d4;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: 'Roboto Mono', monospace;
+}
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #f39adedd;
+    scale: 0.95;
+}
+.btn:active{
+    transform: translateY(2px);
+}
+.Xmark{
+    display: flex;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+i{
+  cursor: pointer;
+  scale: 1;
+  transition: .2s;
+}
+i:hover{
+    scale:.9;
+}
