@@ -2,11 +2,13 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import userContext from './userContext'
 
+let Base_url=process.env.REACT_APP_BASEURL
+
 const UserState = (props) => {
     const [details, setDetails] = useState({ name: "", email: "", id: "", date: "" })
     let navigate = useNavigate()
     const Getuser = async () => {
-        let url = 'http://localhost:5000/api/auth/getuser'
+        let url = `${Base_url}/api/auth/getuser`
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -19,7 +21,7 @@ const UserState = (props) => {
         setDetails({ name: json.user.name, email: json.user.email, id: json.user._id, date: json.user.date })
     }
     const Login = async (email, password) => {
-        let url = `http://localhost:5000/api/auth/login`
+        let url = `${Base_url}/api/auth/login`
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -45,7 +47,7 @@ const UserState = (props) => {
     }
     const Signup = async (name, email, password) => {
         // const {name,email,password,confirmpassword}=credentials;
-        let url = `http://localhost:5000/api/auth/createuser`
+        let url = `${Base_url}/api/auth/createuser`
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -66,7 +68,7 @@ const UserState = (props) => {
         }
     }
     const Changepwd = async (password,oldpassword) => {
-        let url = 'http://localhost:5000/api/auth/userpwd'
+        let url = `${Base_url}/api/auth/userpwd`
         const response = await fetch(url, {
             method: "POST",
             headers: {
