@@ -1,11 +1,9 @@
 .addnoteContainer {
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
   align-items: flex-start;
   justify-content: center;
   width: 60%;
-  /* margin-top: 3rem; */
   background-color: #ffffff ;
   animation: slidetoRight 1s ease-in-out;
   transition: 0.5s ease-out;
@@ -17,13 +15,11 @@
   box-shadow: -15px 15px 10px gray;
 }
 .addnoteContainer form {
-  /* height: 65vh; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
   padding-left: 5px;
-  /* animation: rotateitem 1s ease; */
 }
 .addnoteContainer form textarea {
   background-image: linear-gradient(black 1px, transparent 1px);
@@ -32,9 +28,6 @@
   text-align: start;
   width: 95%;
   border-radius: 5px;
-  /* margin: 5px; */
-  /* border: 2px solid red; */
-  /* background-color: #d7ace8; */
 }
 #title,
 #tag {
@@ -44,8 +37,6 @@
   width: 95%;
   text-align: start;
   border-radius: 5px;
-  /* outline: 1px solid black; */
-  /* background-color: #d7ace8; */
 }
 .addnotebtndiv {
   display: flex;

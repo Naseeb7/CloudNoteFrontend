@@ -111,9 +111,14 @@ const UserState = (props) => {
             document.getElementById("oldpwd").value=""
         }
     }
+
+    const Capitalize = (str) => {
+        const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+        return str2
+      }
     return (
         <div>
-            <userContext.Provider value={{ Login, Signup, Getuser, Changepwd, details,loading2 }}>
+            <userContext.Provider value={{ Login, Signup, Getuser, Changepwd, details,loading2,Capitalize }}>
                 {props.children}
             </userContext.Provider>
         </div>

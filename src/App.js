@@ -28,10 +28,6 @@ function App() {
       setAlert(null);
     }, 2800);
   }
-  const Capitalize = (str) => {
-    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
-    return str2
-  }
   return (
     <>
     <NoteState>
@@ -41,11 +37,11 @@ function App() {
     <Alert alert={alert}/>
       <div className="Container">
     <Routes>
-      <Route exact path='/' element={<Home showAlert={showAlert} Capitalize={Capitalize}/>}/>
+      <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
       <Route exact path='/about' element={<About/>}/>
       <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
       <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
-      <Route exact path='/userprofile' element={<Userprofile showAlert={showAlert} Capitalize={Capitalize}/>}/>
+      <Route exact path='/userprofile' element={<Userprofile showAlert={showAlert}/>}/>
     </Routes>
       </div>
     </UserState>

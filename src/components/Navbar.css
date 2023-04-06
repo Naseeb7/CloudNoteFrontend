@@ -9,7 +9,7 @@
     justify-content: space-between;
     /* position: fixed;
     top: 0; */
-    background-color: #461742;
+    background-color: black;
     /* width: 100%; */
     /* margin: 5px; */
     /* border: 2px solid red; */
@@ -39,7 +39,7 @@
     margin: 5px;
     padding: 5px;
     font-size: 1rem;
-    color: #c294d4;
+    color: white;
     font-family: 'Roboto Condensed', sans-serif;
     transition: .2s;
     transition-timing-function: ease-in-out;
@@ -79,10 +79,6 @@
     padding: 5px;
     background-color: white;
     color: rgb(66, 51, 75);
-}
-.logout button:hover{
-    box-shadow: white 1px 1px 2px 1px;
-    scale: 0.95;
 }
 .login{
     /* border: 2px solid red; */

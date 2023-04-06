@@ -38,7 +38,8 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
-    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid red; */
   }
   .cardbottom h4{
@@ -47,15 +48,14 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 0px;
-    word-wrap: break-word;
     width: 100%;
     /* border: 2px solid red; */
   }
   .cardbottom p{
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    word-wrap: break-word;
+    /* flex-wrap:wrap; */
+    overflow-wrap:anywhere;
     width: 100%;
     /* border: 2px solid red; */
     margin-top: 0px;

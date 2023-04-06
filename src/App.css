@@ -62,8 +62,7 @@
 }
 .btn:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 1px 1px #f39adedd;
-  scale: 0.95;
+  scale: 0.9;
 }
 .btn:active {
   transform: translateY(2px);
@@ -77,6 +76,7 @@
 i {
   cursor: pointer;
   scale: 1.5;
+  padding: 5px;
   margin-left: 10px;
   transition: 0.2s;
 }
@@ -86,14 +86,13 @@ i:hover {
 .spinner {
   display: flex;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   justify-content: center;
   align-items: center;
-  height: 50%;
-  width: 50%;
-  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.642);
   z-index: 999;
   animation: FadeIn 0.5s ease-in-out;

@@ -10,7 +10,7 @@ const Userprofile = (props) => {
   const [oldpassword, setOldpassword] = useState("")
   const usercontext = useContext(userContext);
   const navigator = useNavigate()
-  const { Changepwd, Getuser, details,loading2 } = usercontext
+  const { Changepwd, Getuser, details,loading2,Capitalize } = usercontext
   const changepwdform=document.getElementById("changepwdForm")
   useEffect(() => {
     Getuser();
@@ -63,11 +63,11 @@ const Userprofile = (props) => {
         <i className="fa-solid fa-arrow-left back" onClick={handleBack}/>
       <img src="https://i.ibb.co/XZ96p84/avataaars.png" alt="You" onClick={() => { navigator("/") }} />
       <div className="profileDetails">
-        <h3 className='titletext'>{props.Capitalize(details.name)}</h3>
+        <h3 className='titletext'>{Capitalize(details.name)}</h3>
         <h4 className='titletext'>Email</h4>
         <span className='paratext'>{details.email}</span>
         <h4 className='titletext'>Date created</h4>
-        <span className='paratext'>{details.date.toString()}</span><br />
+        <span className='paratext'>{details.date.toString().split("T")[0]}</span><br />
         <button className="changeformbtn btn" onClick={showForm}>Change Password</button>
       </div>
       <div className="hidden" id='changepwdForm'>

@@ -11,7 +11,7 @@ const Notes = (props) => {
   const notecontext = useContext(noteContext);
   const { notes, getNotes,editNote,loading } = notecontext;
   const usercontext=useContext(userContext);
-  const {Getuser,details}=usercontext
+  const {Getuser,details,Capitalize}=usercontext
   let navigator=useNavigate()
   useEffect(() => {
     if(localStorage.getItem("token")){
@@ -80,12 +80,12 @@ const Notes = (props) => {
       </div>
       <div className="notesArea">
         <div style={{display:"flex"}}>
-        <h2 className='titletext' style={{color:"#76236f",animation:"growOut .5s"}}>{props.Capitalize(details.name)}'s notes</h2>
+        <h2 className='titletext' style={{color:"#76236f",animation:"growOut .5s"}}>{Capitalize(details.name)}'s notes</h2>
         </div>
         <div className="noteitemslist">
         {notes.length===0 && "No notes to display"}
         {notes.map((note) => {
-          return <Noteitem key={note._id} note={note} updateNote={updateNote} Capitalize={props.Capitalize} showAlert={props.showAlert}/>
+          return <Noteitem key={note._id} note={note} updateNote={updateNote} Capitalize={Capitalize} showAlert={props.showAlert}/>
         })}
         </div>
       </div>
