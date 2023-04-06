@@ -5,10 +5,11 @@ import Addnote from './Addnote';
 import Noteitem from './Noteitem';
 import "./Notes.css"
 import userContext from '../context/notes/userContext';
+import Spinner from "./Spinner"
 
 const Notes = (props) => {
   const notecontext = useContext(noteContext);
-  const { notes, getNotes,editNote } = notecontext;
+  const { notes, getNotes,editNote,loading } = notecontext;
   const usercontext=useContext(userContext);
   const {Getuser,details}=usercontext
   let navigator=useNavigate()
@@ -26,10 +27,10 @@ const Notes = (props) => {
   // console.log(details)
   const [note,setNote]=useState({id:"",etitle:"",edescription:"",etag:"default"})
   let ele = document.getElementById("modal");
-  const handleYes=(e)=>{
+  const handleYes= async(e)=>{
     e.preventDefault()
-    editNote(note.id,note.etitle,note.edescription,note.etag)
     ele.classList.toggle("mymodal")
+    await editNote(note.id,note.etitle,note.edescription,note.etag)
     props.showAlert("Successful","Updated successfully","greenAlert")
   }
   const handleNo=(e)=>{
@@ -58,6 +59,7 @@ const Notes = (props) => {
   
   return (
     <div className='noteContainer'>
+      {loading && <span className="spinner"><Spinner loading={loading}/></span>}
       <Addnote showAlert={props.showAlert}/>
       <div className="modal" id='modal'>
       <div className='myconfirmation' id="confirmation">

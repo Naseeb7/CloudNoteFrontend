@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import userContext from '../context/notes/userContext';
 import "./Login.css"
+import Spinner from './Spinner';
 
 const Login = (props) => {
     const usercontext=useContext(userContext);
-    const {Login}=usercontext
+    const {Login,loading2}=usercontext
     // const {showAlert}=props
     const [credentials,setCredentials]=useState({email:"",password:""})
     const handleLogin = async (e) => {
@@ -15,6 +16,7 @@ const Login = (props) => {
         setCredentials({...credentials,[e.target.name]:e.target.value})
       }
     return (
+        <div className='loginContainer'>
         <div className="loginform">
             <form onSubmit={handleLogin}>
                 <label htmlFor="email" className="titletext">Email</label>
@@ -23,6 +25,8 @@ const Login = (props) => {
                 <input type="password" name='password' value={credentials.password} onChange={onChange} className="inputtext" /><br />
                 <button type='submit' className="btn" >Login</button>
             </form>
+        </div>
+        {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
         </div>
     )
 }

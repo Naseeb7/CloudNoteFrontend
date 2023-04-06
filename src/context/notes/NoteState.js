@@ -6,11 +6,13 @@ const NoteState = (props) => {
   const host=process.env.REACT_APP_BASEURL
   const notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
+  const [loading,setLoading]=useState(false)
 
   //Get allnote
   const getNotes =async () => {
     //API call
     let url=`${host}/api/notes/fetchallnotes`
+    setLoading(true)
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -20,6 +22,7 @@ const NoteState = (props) => {
     });
     const json=await response.json();
     setNotes(json)
+    setLoading(false)
   }
 
 
@@ -27,6 +30,7 @@ const NoteState = (props) => {
   const addNote =async (title, description, tag) => {
     //API call
     let url=`${host}/api/notes/addnote`
+    setLoading(true)
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -37,11 +41,13 @@ const NoteState = (props) => {
     });
     let note=await response.json()
     setNotes(notes.concat(note))
+    setLoading(false)
   }
   //Delete a note
   const deleteNote =async (id) => {
     //API call
     let url=`${host}/api/notes/deletenote/${id}`
+    setLoading(true)
     const response = await fetch(url, {
       method: "DELETE",
       headers: {
@@ -49,17 +55,20 @@ const NoteState = (props) => {
         "auth-token": localStorage.getItem("token")
             }
     });
-    // const json= await response.json();
+    // eslint-disable-next-line
+    const json= await response.json();
 
     //Logic to delete note on client-side
     const newNotes = notes.filter((note) => { return note._id !== id })
     setNotes(newNotes)
+    setLoading(false)
   }
 
   //Edit a note
   const editNote = async (id, title, description, tag) => {
     //API call
     let url=`${host}/api/notes/updatenote/${id}`
+    setLoading(true)
     const response = await fetch(url, {
       method: "PUT",
       headers: {
@@ -68,7 +77,8 @@ const NoteState = (props) => {
             },
       body: JSON.stringify({title,description,tag}),
     });
-    // const json=response.json();
+    // eslint-disable-next-line
+    const json=response.json();
 
     let newNotes=JSON.parse(JSON.stringify(notes))
     //Logic to edit in client-side
@@ -82,11 +92,12 @@ const NoteState = (props) => {
       }
     }
     setNotes(newNotes)
+    setLoading(false)
   }
 
 
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote,getNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote,getNotes,loading }}>
       {props.children}
     </NoteContext.Provider>
   );

@@ -1,7 +1,14 @@
+.signupContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
 .signupform{
     display: flex;
     /* border: 2px solid red; */
-    width: 25%;
+    /* width: 25%; */
     justify-content: center;
     align-items: center;
     background-color: #4d0647;
@@ -16,7 +23,7 @@
 .signupform form{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 90%;
 }
 .signupform form label{
     color: #c294d4;

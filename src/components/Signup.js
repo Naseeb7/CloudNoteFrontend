@@ -2,14 +2,22 @@ import React, { useState,useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import userContext from '../context/notes/userContext';
 import "./Signup.css"
+import Spinner from './Spinner';
 const Signup = (props) => {
     const usercontext=useContext(userContext);
-    const {Signup}=usercontext
+    const {Signup,loading2}=usercontext
     const [credentials,setCredentials]=useState({name:"",email:"",password:"",confirmpassword:""})
     let navigate=useNavigate()
     const handleSignup = async (e) => {
-        e.preventDefault();
-       Signup(credentials.name,credentials.email,credentials.password)
+        e.preventDefault()
+        let password=document.getElementById("password").value
+        let confirmPassword=document.getElementById("confirmPassword").value
+       if(password===confirmPassword){
+        Signup(credentials.name,credentials.email,credentials.password)
+       }
+       else{
+        props.showAlert("Mismatch","Passwords doesn't match","redAlert")
+       }
     }
     const onChange=(e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value})
@@ -18,6 +26,7 @@ const Signup = (props) => {
       navigate("/login")
     }
   return (
+    <div className="signupContainer">
     <div className="signupform">
       <form onSubmit={handleSignup}>
                 <label htmlFor="name" className="titletext">Name</label>
@@ -26,13 +35,15 @@ const Signup = (props) => {
                 <label htmlFor="email" className="titletext">Email</label>
                 <input type="text" name='email' onChange={onChange} className="inputtext" /><br />
                 <label htmlFor="password" className="titletext">Password</label>
-                <input type="password" name='password'  onChange={onChange} className="inputtext" />
+                <input type="password" name='password' id='password'  onChange={onChange} className="inputtext" />
                 <span className="commenttext">*Password must be at least 5 characters long</span><br />
                 <label htmlFor="confirmpassword" className="titletext">Confirm Password</label>
-                <input type="password" name='confirmpassword'  onChange={onChange} className="inputtext" /><br />
+                <input type="password" name='confirmpassword' id='confirmPassword'  onChange={onChange} className="inputtext" /><br />
                 <button type='submit' className="btn" >Signup</button><br />
                 <span className='paratext gototext'>Already have an account <span onClick={handleHere} className="clickhere">Click here!</span></span>
             </form>
+    </div>
+    {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
     </div>
   )
 }

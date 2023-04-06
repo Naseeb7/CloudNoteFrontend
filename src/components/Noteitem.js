@@ -5,12 +5,12 @@ import noteContext from '../context/notes/noteContext';
 const Noteitem = (props) => {
     const context=useContext(noteContext);
     const { deleteNote } = context;
-    const { note,updateNote,Capitalize } = props;
+    const { note,updateNote } = props;
     return (
         <>
             <div className="cardContainer">
                 <div className="cardtop">
-                    <i className="fa-solid fa-trash" onClick={()=>{deleteNote(note._id);  props.showAlert("Successful","Note deleted!","greenAlert")}}></i>
+                    <i className="fa-solid fa-trash" onClick={async ()=>{await deleteNote(note._id);  props.showAlert("Successful","Note deleted!","greenAlert")}}></i>
                     <span className="tag tagtext">{note.tag}</span>
                     <i className="fa-solid fa-pen-to-square" onClick={()=>{updateNote(note)}}></i>
                 </div>

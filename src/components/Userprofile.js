@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import userContext from '../context/notes/userContext';
 import "./Userprofile.css"
+import Spinner from './Spinner';
 
 const Userprofile = (props) => {
   const [password, setPassword] = useState("")
@@ -9,7 +10,7 @@ const Userprofile = (props) => {
   const [oldpassword, setOldpassword] = useState("")
   const usercontext = useContext(userContext);
   const navigator = useNavigate()
-  const { Changepwd, Getuser, details } = usercontext
+  const { Changepwd, Getuser, details,loading2 } = usercontext
   const changepwdform=document.getElementById("changepwdForm")
   useEffect(() => {
     Getuser();
@@ -44,18 +45,21 @@ const Userprofile = (props) => {
     e.preventDefault()
     changepwdform.style.animation="fadeOut .3s ease-out"
     setTimeout(() => {
-      changepwdform.classList.toggle("showform")
+      changepwdform.classList.remove("showform")
+      changepwdform.classList.add("hidden")
     }, 250);
   }
   const handleX = () => {
     changepwdform.style.animation="fadeOut .3s ease-out"
     setTimeout(() => {
       
-      changepwdform.classList.toggle("showform")
+      changepwdform.classList.remove("showform")
+      changepwdform.classList.add("hidden")
     }, 250);
   }
   return (
     <div className='profileContainer'>
+      {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
         <i className="fa-solid fa-arrow-left back" onClick={handleBack}> Back</i>
       <img src="https://i.ibb.co/XZ96p84/avataaars.png" alt="You" onClick={() => { navigator("/") }} />
       <div className="profileDetails">

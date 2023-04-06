@@ -7,8 +7,12 @@ let Base_url=process.env.REACT_APP_BASEURL
 const UserState = (props) => {
     const [details, setDetails] = useState({ name: "", email: "", id: "", date: "" })
     let navigate = useNavigate()
+    const [loading2,setLoading2]=useState(false)
+
+    // Getting user
     const Getuser = async () => {
         let url = `${Base_url}/api/auth/getuser`
+        setLoading2(true)
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -19,9 +23,13 @@ const UserState = (props) => {
         const json = await response.json();
         // console.log(json)
         setDetails({ name: json.user.name, email: json.user.email, id: json.user._id, date: json.user.date })
+        setLoading2(false)
     }
+
+    //LogIn
     const Login = async (email, password) => {
         let url = `${Base_url}/api/auth/login`
+        setLoading2(true)
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -32,7 +40,8 @@ const UserState = (props) => {
         });
         const json = await response.json();
         // console.log(json)
-        if (json.success) {
+        setLoading2(false)
+        if (json.success && loading2===false) {
             //redirect
             localStorage.setItem("token", json.authtoken);
             navigate("/");
@@ -45,9 +54,12 @@ const UserState = (props) => {
             props.showAlert("Invalid", "Credentials","redAlert")
         }
     }
+
+    // SignUp
     const Signup = async (name, email, password) => {
         // const {name,email,password,confirmpassword}=credentials;
         let url = `${Base_url}/api/auth/createuser`
+        setLoading2(true)
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -57,6 +69,7 @@ const UserState = (props) => {
         });
         const json = await response.json();
         // console.log(json)
+        setLoading2(false)
         if (json.success) {
             //redirect
             localStorage.setItem("token", json.authtoken);
@@ -64,11 +77,14 @@ const UserState = (props) => {
             props.showAlert("Successful", "Account Created","greenAlert")
         }
         else {
-            props.showAlert("Invalid", "Please fillup the form correctly","redAlert")
+            props.showAlert("LogIn", "An account with that email already exists","alert")
         }
     }
+
+    // Change Password
     const Changepwd = async (password,oldpassword) => {
         let url = `${Base_url}/api/auth/userpwd`
+        setLoading2(true)
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -86,8 +102,10 @@ const UserState = (props) => {
             props.showAlert("Denied","Invalid credentials!","redAlert")
         }
         else{
+            setLoading2(false)
             props.showAlert("Success","Password changed successfully","greenAlert")
-            document.getElementById("changepwdForm").classList.toggle("hidden");
+            document.getElementById("changepwdForm").classList.remove("showform");
+            document.getElementById("changepwdForm").classList.add("hidden");
             document.getElementById("newpwd").value=""
             document.getElementById("confirmpwd").value=""
             document.getElementById("oldpwd").value=""
@@ -95,7 +113,7 @@ const UserState = (props) => {
     }
     return (
         <div>
-            <userContext.Provider value={{ Login, Signup, Getuser, Changepwd, details }}>
+            <userContext.Provider value={{ Login, Signup, Getuser, Changepwd, details,loading2 }}>
                 {props.children}
             </userContext.Provider>
         </div>
