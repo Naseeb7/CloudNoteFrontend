@@ -1,7 +1,7 @@
 .noteContainer{
     display: flex;
     /* border: 2px solid green; */
-    /* width: 100%; */
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -69,7 +69,7 @@
     flex-wrap: wrap;
     padding: 5px;
     align-items: center;
-    /* width: 90%; */
+    width: 50%;
     /* border: 2px solid red; */
 }
 .noteitemslist{
