@@ -10,7 +10,7 @@
     /* position: fixed;
     top: 0; */
     background-color: #461742;
-    width: 100%;
+    /* width: 100%; */
     /* margin: 5px; */
     /* border: 2px solid red; */
     z-index: 11;
@@ -50,14 +50,15 @@
 }
 .btnContainer{
     display: flex;
+    flex-direction: row;
     margin: 5px;
-    width: 8%;
     justify-content: center;
     /* border: 2px solid yellow; */
 }
 .logout{
     display: flex;
     flex-direction: row;
+    margin: 5px;
     padding: 5px;
     justify-content: space-around;
     align-items: center;
@@ -65,6 +66,7 @@
 }
 .logout i{
     margin-right: 10px;
+    padding: 5px;
     color: white;
     scale: 1.2;
 }
@@ -74,6 +76,7 @@
 .logout button{
     margin-left: 5px;
     display: flex;
+    padding: 5px;
     background-color: white;
     color: rgb(66, 51, 75);
 }

@@ -4,10 +4,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap");
 
+
 .Container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* border: 2px solid red; */
 }
 .headertext {
   display: flex;
