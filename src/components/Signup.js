@@ -27,6 +27,7 @@ const Signup = (props) => {
     }
   return (
     <div className="signupContainer">
+      <span className="headertext loginHeader">CloudNote</span>
     <div className="signupform">
       <form onSubmit={handleSignup}>
                 <label htmlFor="name" className="titletext">Name</label>

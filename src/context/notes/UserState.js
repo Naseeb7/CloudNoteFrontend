@@ -48,6 +48,7 @@ const UserState = (props) => {
             props.showAlert("Happy Noting","","alert")
         }
         else if(json.success===false && json.error==="Incorrect email"){
+            navigate("/signup")
             props.showAlert("No account with that email","Please create an account","alert")
         }
         else {
@@ -77,7 +78,8 @@ const UserState = (props) => {
             props.showAlert("Successful", "Account Created","greenAlert")
         }
         else {
-            props.showAlert("LogIn", "An account with that email already exists","alert")
+            navigate("/login")
+            props.showAlert("Please login", "An account with that email already exists","alert")
         }
     }
 

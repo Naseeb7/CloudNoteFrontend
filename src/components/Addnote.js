@@ -26,9 +26,7 @@ const Addnote = (props) => {
                 <textarea type="text" id="description" name="description" placeholder="Description" value={note.description} rows="6" onChange={onChange} minLength={5} required className='inputtext'/><br />
                 <label htmlFor="tag" className='titletext addnotetag'><b>Tag</b></label>
                 <input type="text" id="tag" name="tag" placeholder="Tag" value={note.tag} onChange={onChange} className='inputtext'/><br />
-                <span className="addnotebtndiv">
                 <input type="submit" value="Add note" className='btn addnotebtn' onClick={handleClick} disabled={note.title.length<5 || note.description.length<5} />
-                </span>
                 <span className="commenttext">*Title must be at least 3 characters long</span>
                 <span className="commenttext">*Description must be at least 5 characters long</span>
             </form>

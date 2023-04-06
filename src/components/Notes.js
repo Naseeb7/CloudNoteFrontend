@@ -60,10 +60,9 @@ const Notes = (props) => {
   return (
     <div className='noteContainer'>
       {loading && <span className="spinner"><Spinner loading={loading}/></span>}
-      <Addnote showAlert={props.showAlert}/>
       <div className="modal" id='modal'>
       <div className='myconfirmation' id="confirmation">
-          <h2 className='headertext' style={{color:"#76236f"}}>Update note</h2><i className="fa-solid fa-xmark Xmark" onClick={handleX}/>
+          <h2 className='headertext'>Update note</h2><i className="fa-solid fa-xmark Xmark" onClick={handleX}/>
           <form>
             <label htmlFor="etitle" className='titletext'>Title</label>
             <input type="text" id="etitle" name="etitle" className='inputtext' placeholder="Title" value={note.etitle} onChange={onChange} minLength={5} required/><br />
@@ -80,7 +79,7 @@ const Notes = (props) => {
       </div>
       <div className="notesArea">
         <div style={{display:"flex"}}>
-        <h2 className='titletext' style={{color:"#76236f",animation:"growOut .5s"}}>{Capitalize(details.name)}'s notes</h2>
+        <h2 className='titletext' style={{animation:"growOut .5s"}}>{Capitalize(details.name)}'s notes</h2>
         </div>
         <div className="noteitemslist">
         {notes.length===0 && "No notes to display"}
@@ -89,6 +88,7 @@ const Notes = (props) => {
         })}
         </div>
       </div>
+      <Addnote showAlert={props.showAlert}/>
     </div>
   )
 }

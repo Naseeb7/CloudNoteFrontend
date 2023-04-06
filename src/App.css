@@ -32,18 +32,24 @@
 }
 .inputtext {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   font-family: "Space Grotesk", sans-serif;
   /* text-align: center; */
-  outline: none;
   border: none;
+  border-radius: 10px;
+  outline: 1px solid black;
   font-size: 20px;
+}
+.inputtext:focus{
+  box-shadow: 1px 1px 4px 2px black;
 }
 .commenttext {
   display: flex;
   font-family: "Edu NSW ACT Foundation", cursive;
   font-size: x-small;
-  color: rgb(254, 40, 40);
+  color: #c294d4;
 }
 .tagtext {
   display: flex;
@@ -51,18 +57,19 @@
 }
 .btn {
   display: flex;
-  padding: 4px;
-  color: #401c4e;
+  padding: 5px;
+  margin: 5px;
   justify-content: center;
   align-items: center;
-  background-color: #c294d4;
-  border-radius: 5px;
+  border-radius: 30px;
   transition: 0.2s;
   font-family: "Roboto Mono", monospace;
 }
 .btn:hover {
   cursor: pointer;
   scale: 0.9;
+  background-color: #c294d4;
+  color: white;
 }
 .btn:active {
   transform: translateY(2px);
@@ -97,9 +104,12 @@ i:hover {
   z-index: 999;
   animation: FadeIn 0.5s ease-in-out;
 }
-img{
-  border-radius: 50%;
-  box-shadow:0 0 12px 5px #983290f9;
+.back{
+  display: flex;
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  color: black;
 }
 @keyframes FadeIn {
   0% {

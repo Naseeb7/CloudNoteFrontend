@@ -3,14 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    padding: 30px;
+    margin: 2rem;
+    padding: 2rem;
     background-color: #000000;
     color: white;
     box-shadow:0 0 12px 5px #a9279e9f;
     border-radius: 10px;
 }
-.profileContainer img{
+.profileDetails img{
     display: flex;
     /* border: 2px solid yellow; */
     /* width: 50%; */
@@ -19,7 +19,7 @@
     height: 25vh;
     transition: 0.3s;
 }
-.profileContainer img:hover{
+.profileDetails img:hover{
     cursor: pointer;
     box-shadow:0 0 15px 8px #bd3eb2;
     scale: 1.1;

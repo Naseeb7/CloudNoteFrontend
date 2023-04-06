@@ -1,10 +1,10 @@
 .noteContainer{
     display: flex;
     /* border: 2px solid green; */
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* width: 100%; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .modal{
     display: none;
@@ -32,8 +32,8 @@
     background-color: white;
     opacity: 1;
     transition: all .5s;
-    border: 5px solid #c294d4;
-    border-radius: 10px;
+    border: 5px solid black;
+    border-radius: 30px;
 }
 .myconfirmation form{
     /* border: 2px solid blue; */
@@ -41,15 +41,8 @@
     flex-direction: column;
     width: 80%;
 }
-.myconfirmation form input{
-    background-image: linear-gradient(black 1px, transparent 1px);
-    background-size: 100% 25px;
-}
 .myconfirmation form textarea{
-    background-image: linear-gradient(black 1px, transparent 1px);
-    background-size: 100% 25px;
     resize: none;
-    
 }
 #yesnobtn{
     display: flex;
@@ -76,7 +69,7 @@
     flex-wrap: wrap;
     padding: 5px;
     align-items: center;
-    width: 90%;
+    /* width: 90%; */
     /* border: 2px solid red; */
 }
 .noteitemslist{

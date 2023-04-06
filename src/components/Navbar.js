@@ -18,13 +18,13 @@ const Navbar =()=> {
         <div className="navbarContainer">
             <div className="categories">
             <label className='title header'>CloudNote</label>
-              <Link to="/" className="links" style={{color:`${location.pathname==="/"?"#41e9cd":""}`}} id="homelink">Home</Link>
-              <Link to="/about" className="links" style={{color:`${location.pathname==="/about"?"#41e9cd":""}`}} id="about">About</Link>
+              <Link to="/" className="links" style={{color:`${location.pathname==="/"?"black":""}`}} id="homelink">Home</Link>
+              <Link to="/about" className="links" style={{color:`${location.pathname==="/about"?"black":""}`}} id="about">About</Link>
             </div>
             <div className="btnContainer" id='btnContainer'>
-            {!localStorage.getItem("token")? <div className='login'><Link to='/login' className="links">Login</Link>
-            <Link to='/signup' className="links">Signup</Link></div>:<div className='logout'>
-            <i className="fa-regular fa-id-badge" onClick={handleProfile} style={{color:`${location.pathname==="/userprofile"?"#41e9cd":""}`}}></i>
+            {!localStorage.getItem("token")? <div className='login'><Link to='/login' className="links" style={{color:`${location.pathname==="/login"?"black":""}`}}>Login</Link>
+            <Link to='/signup' className="links" style={{color:`${location.pathname==="/signup"?"black":""}`}}>Signup</Link></div>:<div className='logout'>
+            <i className="fa-regular fa-id-badge" onClick={handleProfile} style={{color:`${location.pathname==="/userprofile"?"black":""}`}}></i>
             <button className='btn' onClick={handleLogout}>Logout</button></div>}
             
       </div>
