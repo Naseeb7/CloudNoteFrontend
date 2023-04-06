@@ -73,11 +73,12 @@
 }
 i {
   cursor: pointer;
-  scale: 1;
+  scale: 1.5;
+  margin-left: 10px;
   transition: 0.2s;
 }
 i:hover {
-  scale: 0.9;
+  scale: 1.2;
 }
 .spinner {
   display: flex;
@@ -93,6 +94,10 @@ i:hover {
   background-color: rgba(0, 0, 0, 0.642);
   z-index: 999;
   animation: FadeIn 0.5s ease-in-out;
+}
+img{
+  border-radius: 50%;
+  box-shadow:0 0 12px 5px #983290f9;
 }
 @keyframes FadeIn {
   0% {

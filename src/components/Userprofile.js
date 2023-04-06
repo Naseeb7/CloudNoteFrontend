@@ -60,7 +60,7 @@ const Userprofile = (props) => {
   return (
     <div className='profileContainer'>
       {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
-        <i className="fa-solid fa-arrow-left back" onClick={handleBack}> Back</i>
+        <i className="fa-solid fa-arrow-left back" onClick={handleBack}/>
       <img src="https://i.ibb.co/XZ96p84/avataaars.png" alt="You" onClick={() => { navigator("/") }} />
       <div className="profileDetails">
         <h3 className='titletext'>{props.Capitalize(details.name)}</h3>

@@ -9,7 +9,7 @@ const About = () => {
   }
   return (
     <div className='aboutContainer'>
-      <i className="fa-solid fa-arrow-left back" onClick={handleBack}> Back</i>
+      <i className="fa-solid fa-arrow-left back" onClick={handleBack}/>
       <div className="aboutHead">
       <img src="https://i.ibb.co/JsBj26L/oie-rys-Pwf7-BQVWb.jpg" alt="CloudNote" className="image" />
       <h1 className='aboutHeader'>CloudNote-Your notes secured on the cloud</h1>

@@ -1,12 +1,10 @@
 .profileContainer{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 2rem;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    height: 80vh;
+    margin: 10px;
+    padding: 20px;
     background-color: #000000;
     color: white;
     box-shadow:0 0 12px 5px #a9279e9f;
@@ -15,10 +13,10 @@
 .profileContainer img{
     display: flex;
     /* border: 2px solid yellow; */
-    width: 50%;
+    /* width: 50%; */
     border-radius: 50%;
     box-shadow:0 0 12px 5px #983290f9;
-    height: 20vh;
+    height: 25vh;
     transition: 0.3s;
 }
 .profileContainer img:hover{
@@ -47,16 +45,23 @@
 }
 .showform{
     display: flex;
-    background-color: rgba(0, 0, 0, 0.816);
+    background-color: rgba(255, 252, 252, 0.829);
+    color: black;
     position: absolute;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    /* width: 60%; */
     /* border: 2px solid red; */
     height: auto;
-    padding: 10px;
+    margin: 5px;
+    padding: 2rem;
     border-radius: 10px;
+    box-shadow:0 0 12px 5px #a9279e9f;
     /* animation: fadeIn .3s ease-in; */
+}
+.showform input{
+    background-color: rgba(0, 0, 0, 0.774);
+    color: white;
 }
 .out{
     animation: fadeOut .3s;
