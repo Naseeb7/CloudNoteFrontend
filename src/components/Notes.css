@@ -69,8 +69,9 @@
     flex-wrap: wrap;
     padding: 5px;
     align-items: center;
-    width: 50%;
-    /* border: 2px solid red; */
+    width: 60%;
+    /* border: 2px solid black;
+    border-radius: 10px; */
 }
 .noteitemslist{
     display: flex;

@@ -66,8 +66,8 @@ const Userprofile = (props) => {
         <h3 className='titletext'>{Capitalize(details.name)}</h3>
         <h4 className='titletext'>Email</h4>
         <span className='paratext'>{details.email}</span>
-        <h4 className='titletext'>Date created</h4>
-        <span className='paratext'>{details.date.toString().split("T")[0]}</span><br />
+        <h4 className='titletext'>Account createed on</h4>
+        <span className='paratext'>{new Date(details.date.toString().split("T")[0]).toDateString()}</span><br />
         <button className="changeformbtn btn" onClick={showForm}>Change Password</button>
       </div>
       <div className="hidden" id='changepwdForm'>

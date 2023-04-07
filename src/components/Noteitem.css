@@ -6,7 +6,7 @@
     transition: 0.3s;
     padding: 5px;
     margin: 10px;
-    width: 30%;
+    /* overflow-y:auto ; */
     position: relative;
     background-color: #f3e2fa;
     animation: growOut .5s ease-in-out;
@@ -48,7 +48,6 @@
     flex-wrap: wrap;
     overflow-wrap:anywhere;
     justify-content: center;
-    margin-bottom: 0px;
     width: 100%;
     /* border: 2px solid red; */
   }
@@ -58,10 +57,8 @@
     /* flex-wrap:wrap; */
     overflow-wrap:anywhere;
     width: 100%;
+    line-height: 1.5;
     /* border: 2px solid red; */
-    margin-top: 0px;
-    background-image: linear-gradient(black 1px, transparent 1px);
-    background-size: 100% 20px;
   }
   @keyframes growOut {
     0% { 
@@ -74,3 +71,4 @@
       transform: scaleY(100%)
     }
   }
+  
