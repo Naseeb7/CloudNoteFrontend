@@ -82,7 +82,7 @@ const Notes = (props) => {
         <h2 className='titletext' style={{animation:"growOut .5s"}}>{Capitalize(details.name)}'s notes</h2>
         </div>
         <div className="noteitemslist">
-        {notes.length===0 && "No notes to display"}
+        {notes.length===0 && "Add some notes to display it here, none for now"}
         {notes.map((note) => {
           return <Noteitem key={note._id} note={note} updateNote={updateNote} Capitalize={Capitalize} showAlert={props.showAlert}/>
         })}

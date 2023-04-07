@@ -41,6 +41,7 @@
   border-radius: 10px;
   outline: 1px solid black;
   font-size: 20px;
+  margin: 10px;
 }
 .inputtext:focus{
   box-shadow: 1px 1px 4px 2px black;
