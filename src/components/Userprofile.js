@@ -59,7 +59,7 @@ const Userprofile = (props) => {
   }
   return (
     <div className='profileContainer'>
-      {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
+      {loading2 && <Spinner loading={loading2}/>}
         <i className="fa-solid fa-arrow-left back" onClick={handleBack}/>
       <div className="profileDetails">
       <img src="https://i.ibb.co/XZ96p84/avataaars.png" alt="You" onClick={() => { navigator("/") }} />

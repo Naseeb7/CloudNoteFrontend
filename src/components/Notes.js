@@ -59,7 +59,7 @@ const Notes = (props) => {
   
   return (
     <div className='noteContainer'>
-      {loading && <span className="spinner"><Spinner loading={loading}/></span>}
+      {loading && <Spinner loading={loading}/>}
       <div className="modal" id='modal'>
       <div className='myconfirmation' id="confirmation">
           <h2 className='headertext'>Update note</h2><i className="fa-solid fa-xmark Xmark" onClick={handleX}/>

@@ -27,7 +27,7 @@ const Login = (props) => {
                 <button type='submit' className="btn" >Login</button>
             </form>
         </div>
-        {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
+        {loading2 && <Spinner loading={loading2}/>}
         </div>
     )
 }

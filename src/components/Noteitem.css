@@ -42,13 +42,15 @@
     align-items: center;
     /* border: 2px solid red; */
   }
-  .cardbottom h4{
+  .cardTitle{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     overflow-wrap:anywhere;
     justify-content: center;
     width: 100%;
+    margin: 5px;
+    text-align: center;
     /* border: 2px solid red; */
   }
   .cardbottom p{

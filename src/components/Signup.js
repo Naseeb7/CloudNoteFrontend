@@ -44,7 +44,7 @@ const Signup = (props) => {
                 <span className='paratext gototext'>Already have an account <span onClick={handleHere} className="clickhere">Click here!</span></span>
             </form>
     </div>
-    {loading2 && <span className="spinner"><Spinner loading={loading2}/></span>}
+    {loading2 && <Spinner loading={loading2}/>}
     </div>
   )
 }

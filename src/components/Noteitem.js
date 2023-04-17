@@ -14,7 +14,7 @@ const Noteitem = (props) => {
                     <i className="fa-solid fa-pen-to-square" onClick={()=>{updateNote(note)}}></i>
                 </div>
                 <div className="cardbottom">
-                    <h4 className='titletext'><b>{props.Capitalize(note.title)}</b></h4>
+                    <span className='titletext cardTitle'><b>{props.Capitalize(note.title)}</b></span>
                     <p className='paratext'>{note.description}</p>
                     <span className="tag tagtext">{note.tag}</span>
                 </div>

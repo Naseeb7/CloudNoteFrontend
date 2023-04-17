@@ -42,6 +42,7 @@
   outline: 1px solid black;
   font-size: 20px;
   margin: 10px;
+  padding: 8px;
 }
 .inputtext:focus{
   box-shadow: 1px 1px 4px 2px black;
@@ -83,13 +84,12 @@
 }
 i {
   cursor: pointer;
-  scale: 1.5;
+  scale: 1.2;
   padding: 5px;
   margin-left: 10px;
-  transition: 0.2s;
 }
 i:hover {
-  scale: 1.2;
+  scale: 1;
 }
 .spinner {
   display: flex;
@@ -102,7 +102,7 @@ i:hover {
   justify-content: center;
   align-items: center;
   /* overflow: auto; */
-  background-color: rgba(0, 0, 0, 0.642);
+  /* background-color: rgba(0, 0, 0, 0.642); */
   z-index: 999;
   animation: FadeIn 0.5s ease-in-out;
 }
