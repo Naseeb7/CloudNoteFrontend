@@ -32,10 +32,6 @@ CloudNote is built using the following technologies:
 - **Cloud Storage:**
   - **Amazon S3:** For securely storing user-generated content in the cloud.
 
-- **Deployment:**
-  - **Docker:** Containerization for easy deployment and scaling.
-  - **Heroku:** Hosting the application in the cloud for online access.
-
 - **Version Control:**
   - **Git:** For tracking changes and collaboration.
 
